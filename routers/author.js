@@ -46,7 +46,7 @@ router.post("/register", async (req, res) => {
     await newUser.save();
 
     //return tokens
-    const acess_token = jwt.sign(
+    const access_token = jwt.sign(
       { userId: newUser._id },
       process.env.ACCESS_TOKEN_SECRET
     );
@@ -90,7 +90,7 @@ router.post("/login", async (req, res) => {
         .json({ success: false, message: "password incorrect" });
     }
     //return tokens
-    const acess_token = jwt.sign(
+    const access_token = jwt.sign(
       { userId: user._id },
       process.env.ACCESS_TOKEN_SECRET
     );
